@@ -3,6 +3,12 @@ import tensorflow as tf
 from PIL import Image, ImageOps
 import numpy as np
 import cv2
+import os
+import logging
+
+# Configure TensorFlow to log to a file instead of stdout
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # Suppress TensorFlow logging
+logging.getLogger('tensorflow').disabled = True
 
 # Load your trained model
 model = tf.keras.models.load_model('brain_tumor.h5')
