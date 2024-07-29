@@ -9,7 +9,8 @@ st.markdown(
     """
     <style>
     .stApp {
-       background: linear-gradient(135deg, #FF6347, #FFD700); /* Tomato to Gold */
+   background: linear-gradient(135deg, #0044cc, #99ccff);
+
 
 
     }
