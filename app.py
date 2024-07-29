@@ -4,6 +4,18 @@ from PIL import Image, ImageOps
 import numpy as np
 import cv2
 
+# Custom CSS for gradient background
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background: linear-gradient(135deg, red, white);
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # Load your trained model
 model = tf.keras.models.load_model('brain_tumor.h5')
 
