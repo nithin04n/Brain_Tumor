@@ -7,9 +7,9 @@ from keras.utils import normalize, to_categorical
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D, Activation, Dropout, Flatten, Dense
 
-image_dir = r'D:\Brain_tumor_dataset\proj\datasets'
-no_tumor_images_dir = os.path.join('D:\\Brain_tumor_dataset\\proj\\datasets\\no')
-yes_tumor_images_dir = os.path.join('D:\\Brain_tumor_dataset\\proj\\datasets\\yes')
+image_dir = r'C:\Users\kkrav\OneDrive\Documents\data_science projects\brain tumour\brain_tumor_dataset'
+no_tumor_images_dir = os.path.join(image_dir, 'no')
+yes_tumor_images_dir = os.path.join(image_dir, 'yes')
 
 dataset = []
 label = []
@@ -80,10 +80,7 @@ model.add(Activation('softmax'))
 
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
-try:
-    history = model.fit(x_train, y_train, batch_size=16, epochs=10, verbose=1, validation_data=(x_test, y_test), shuffle=True)
-except UnicodeEncodeError as e:
-    print(f"UnicodeEncodeError: {e}")
+history = model.fit(x_train, y_train, batch_size=16, epochs=10, verbose=1, validation_data=(x_test, y_test), shuffle=True)
 
 model.save('brain_tumor.h5')
 
